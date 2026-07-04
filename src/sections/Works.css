@@ -1,0 +1,228 @@
+﻿.works {
+  padding: 120px 0 80px;
+  position: relative;
+  background: #f5f3f0;
+  overflow: hidden;
+}
+
+.works__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.works__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.works__label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c97a3c;
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(201, 122, 60, 0.1);
+  border: 1px solid rgba(201, 122, 60, 0.15);
+}
+
+.works__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+.works__title-accent {
+  font-style: italic;
+  color: #c97a3c;
+}
+
+/* ===== ScrollStack 区域 ===== */
+.works__stack-wrap {
+  height: 600px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+}
+
+.works__stack-wrap .scroll-stack-scroller {
+  height: 100%;
+  border-radius: 32px;
+}
+
+.works__stack-wrap .scroll-stack-inner {
+  padding: 10vh 3rem 30rem;
+}
+
+.works__stack-wrap .scroll-stack-card {
+  height: auto;
+  min-height: 280px;
+  padding: 0;
+  margin: 0;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.works__stack-wrap .scroll-stack-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== 堆叠卡片内容 ===== */
+.stack-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 32px 40px;
+  height: 100%;
+  min-height: 280px;
+}
+
+.stack-card__image-wrap {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.stack-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.stack-card:hover .stack-card__image {
+  transform: scale(1.05);
+}
+
+.stack-card__text {
+  flex: 1;
+}
+
+.stack-card__title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stack-card__subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.03em;
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.lightbox__content {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 85vh;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: all 0.3s;
+}
+
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lightbox__media {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox__info {
+  padding: 20px 28px;
+  text-align: center;
+}
+
+.lightbox__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.lightbox__subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .works__inner {
+    padding: 0 20px;
+  }
+  .works__stack-wrap {
+    height: 500px;
+  }
+  .stack-card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    text-align: center;
+  }
+  .stack-card__image-wrap {
+    width: 140px;
+    height: 140px;
+  }
+  .stack-card__title {
+    font-size: 1.6rem;
+  }
+  .lightbox {
+    padding: 20px;
+  }
+}
