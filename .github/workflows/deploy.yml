@@ -40,11 +40,6 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Copy assets to dist
-        run: |
-          cp -r public/images dist/
-          cp -r public/videos dist/
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
